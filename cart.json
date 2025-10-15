@@ -1,0 +1,46 @@
+{
+    "carts": [
+        {
+            "titles": "Comfort Handy Craft",
+            "img": "./imgs/kreslo.png",
+            "pric": "$42.00",
+            "delprice": "$65.00",
+            "desc": "Comfort Handy Craft is a brand that focuses on creating comfortable, ergonomic, and high-quality products for craft and design lovers. Their items are designed to make handwork easier and more enjoyable, combining practical design with comfort and creativity. Products often include crafting tools, accessories, and materials that help users work efficiently and comfortably."
+        },
+        {
+            "titles": "Comfort Creslo",
+            "img": "./imgs/sariqkr.png",
+            "pric": "$50.00",
+            "delprice": "$80.00",
+            "desc": "Comfort Chair — also known as Comfort Creslo — refers to a chair designed for maximum relaxation and ergonomic support. These chairs are often made with soft materials, adjustable backrests, and modern designs that provide both comfort and style. They are commonly used in homes, offices, and lounges for long sitting periods while maintaining good posture and reducing fatigue."
+        },
+        {
+            "titles": "Comfort Creslo Soft",
+            "img": "./imgs/uzunkr.png",
+            "pric": "$54.00",
+            "delprice": "$88.00",
+            "desc": "Comfort Creslo Soft is a premium comfort chair designed with a soft, ergonomic structure that provides excellent support and relaxation. Its smooth upholstery, gentle cushioning, and modern design make it ideal for homes, offices, and lounge areas. The chair combines style, comfort, and durability — perfect for long sitting sessions without losing posture or ease."
+        },
+        {
+            "titles": "Comfort Handy Soft",
+            "img": "./imgs/oqkr.png",
+            "pric": "$32.00",
+            "delprice": "$60.00",
+            "desc": "Comfort Handy Soft is a stylish and ergonomic chair designed for everyday comfort. Made with soft, high-quality materials, it offers excellent back support and a cozy sitting experience. Its lightweight, modern design makes it easy to move and perfect for offices, homes, or creative spaces. The Comfort Handy Soft combines functionality, comfort, and elegance in one smart design."
+        },
+        {
+            "titles": "Comfort Soft Craft",
+            "img": "./imgs/qilzilkr.png",
+            "pric": "$45.00",
+            "delprice": "$55.00",
+            "desc": "Comfort Soft Craft is a modern, ergonomic chair designed for creators and professionals who value comfort and style. Its soft cushioning and supportive shape make long hours of crafting, designing, or working feel effortless. With a sleek look and durable materials, Comfort Soft Craft combines comfort, practicality, and elegant craftsmanship — perfect for studios, offices, and home workspaces."
+        },
+        {
+            "titles": "Comfort Soft Arim Chair",
+            "img": "././imgs/kr.png",
+            "pric": "$34.00",
+            "delprice": "$54.00",
+            "desc": "Comfort Soft Arim Chair is a premium ergonomic chair crafted for exceptional comfort and modern elegance. It features a soft, breathable cushion, smooth curves, and a supportive backrest that perfectly fits your body’s natural shape. Designed for both home and office use, the Comfort Soft Arim Chair offers long-lasting comfort, stylish design, and high-quality materials — making it the perfect balance of relaxation and productivity."
+        }
+    ]
+}

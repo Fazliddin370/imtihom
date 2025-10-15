@@ -1,0 +1,1399 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 44px;
+  background: rgb(126, 51, 224);
+}
+main .wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+  color: rgb(241, 241, 241);
+}
+main .wrapper svg {
+  fill: rgb(241, 241, 241);
+}
+main .wrapper svg {
+  width: 16px;
+}
+main .wrapper .cal {
+  align-items: center;
+  display: flex;
+  gap: 50px;
+}
+main .wrapper .cal .email {
+  display: flex;
+  cursor: pointer;
+  gap: 7px;
+  transition: all 0.5s;
+  align-items: center;
+}
+main .wrapper .cal .email:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .cal .email:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .cal .email svg {
+  transition: all 0.5s;
+}
+main .wrapper .cal .call {
+  display: flex;
+  cursor: pointer;
+  gap: 7px;
+  transition: all 0.5s;
+  align-items: center;
+}
+main .wrapper .cal .call:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .cal .call:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .cal .call svg {
+  transition: all 0.5s;
+}
+main .wrapper .tils {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+main .wrapper .tils .til {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.5s;
+}
+main .wrapper .tils .til svg {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+main .wrapper .tils .til:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .tils .til:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .tils .usd {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  align-items: center;
+}
+main .wrapper .tils .usd select {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+  color: rgb(251, 46, 134);
+  transition: all 0.5s;
+  outline: none;
+}
+main .wrapper .tils .usd:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .tils .usd svg {
+  transition: all 0.5s;
+  transform: rotate(90deg);
+}
+main .wrapper .tils .login {
+  display: flex;
+  gap: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+  align-items: center;
+}
+main .wrapper .tils .login svg {
+  transition: all 0.5s;
+}
+main .wrapper .tils .login:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .tils .login:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .tils .hart {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  align-items: center;
+}
+main .wrapper .tils .hart:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .tils .hart:hover svg {
+  fill: rgb(251, 46, 134);
+}
+main .wrapper .tils .hart svg {
+  transition: all 0.5s;
+}
+main .wrapper .tils .shop {
+  display: flex;
+  cursor: pointer;
+  transition: all 0.5s;
+  align-items: center;
+}
+main .wrapper .tils .shop svg {
+  transition: all 0.5s;
+}
+main .wrapper .tils .shop:hover {
+  color: rgb(251, 46, 134);
+}
+main .wrapper .tils .shop:hover svg {
+  fill: rgb(251, 46, 134);
+}
+
+section .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+}
+section .wrap .cold {
+  display: flex;
+  gap: 80px;
+}
+section .wrap h1 {
+  color: rgb(13, 14, 67);
+}
+section .wrap svg {
+  width: 24px;
+}
+section .wrap .academy.activ {
+  color: rgb(251, 46, 134);
+}
+section .wrap .home.activ {
+  color: rgb(13, 14, 67);
+}
+section .wrap .home.activ svg {
+  fill: rgb(13, 14, 67);
+}
+section .wrap ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+section .wrap ul li {
+  cursor: pointer;
+  color: rgb(13, 14, 67);
+  transition: all 0.5s;
+  font-size: 16px;
+  list-style: none;
+}
+section .wrap ul li:hover {
+  color: rgb(251, 46, 134);
+}
+section .wrap ul li:hover svg {
+  fill: rgb(251, 46, 134);
+}
+section .wrap ul li svg {
+  transition: all 0.5s;
+  width: 12px;
+  transform: rotate(90deg);
+}
+section .wrap ul li:nth-child(1) {
+  color: rgb(251, 46, 134);
+}
+section .wrap ul li:nth-child(1) svg {
+  fill: rgb(251, 46, 134);
+}
+section .wrap .inp {
+  display: flex;
+}
+section .wrap .inp input {
+  border: 0px solid;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+section .wrap .inp .inplet {
+  width: 295px;
+  height: 40px;
+  border-radius: 3px 0px 0px 3px;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(231, 230, 239);
+  background-color: white;
+  padding: 0px 10px;
+}
+section .wrap .inp .inplet input::-moz-placeholder {
+  color: rgb(138, 143, 185);
+  font-size: 16px;
+  font-weight: 400;
+}
+section .wrap .inp .inplet input::placeholder {
+  color: rgb(138, 143, 185);
+  font-size: 16px;
+  font-weight: 400;
+}
+section .wrap .inp .search {
+  width: 51px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(251, 46, 134);
+  height: 40px;
+}
+section .wrap .inp .search svg {
+  fill: white;
+  width: 25px;
+}
+section .swip-pg {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  left: 0;
+  background-color: rgb(242, 240, 255);
+}
+section .swip-pg .lamp {
+  display: flex;
+  padding: 40px 100px;
+  position: absolute;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+section .swip-pg .lamp .lampa {
+  transform: translateY(-174px);
+}
+section .swip-pg .lamp .divan {
+  width: 500px;
+}
+section .swip-pg .lamp .best {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(251, 46, 134);
+  margin-bottom: 10px;
+}
+section .swip-pg .lamp h1 {
+  font-size: 45px;
+  font-weight: 750;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+section .swip-pg .lamp p {
+  color: rgb(138, 143, 185);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+section .swip-pg .lamp button {
+  width: 163px;
+  height: 50px;
+  border: 0px solid;
+  background-color: rgb(251, 46, 134);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+}
+section .cart {
+  width: 100%;
+  background-color: rgb(242, 240, 255);
+  height: 550px;
+}
+section .swiper {
+  width: 100%;
+  height: 550px;
+  background-color: rgb(242, 240, 255);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .swiper-slide {
+  font-size: 18px;
+  background: rgb(242, 240, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section .product {
+  text-align: center;
+}
+section .product h1 {
+  padding: 30px 0px;
+  color: rgb(21, 24, 117);
+  font-size: 42px;
+  font-weight: 700;
+}
+section .product ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin-bottom: 70px;
+  text-align: center;
+  justify-content: center;
+}
+section .product ul li {
+  cursor: pointer;
+  color: rgb(21, 24, 117);
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.5s;
+}
+section .product ul li:hover {
+  color: rgb(251, 73, 151);
+}
+section .product ul li:nth-child(1) {
+  color: rgb(251, 73, 151);
+}
+section .carts {
+  display: grid;
+  margin-bottom: 60px;
+  grid-template-columns: repeat(3, 1fr);
+}
+section .carts .cart-box {
+  margin-bottom: 70px;
+  width: 360px;
+}
+section .carts .cart-box .add {
+  display: none;
+}
+section .carts .cart-box .img-box {
+  width: 360px;
+  height: 280px;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  overflow: hidden;
+  justify-content: center;
+}
+section .carts .cart-box .img-box img {
+  width: 223px;
+  height: 229px;
+  transform: translateY(-250px);
+}
+section .carts .cart-box .img-box:hover {
+  background-color: white;
+}
+section .carts .cart-box .img-box:hover .shopping svg {
+  width: 19px;
+}
+section .carts .cart-box .img-box:hover .sale {
+  background: rgb(63, 80, 158);
+  color: white;
+}
+section .carts .cart-box .img-box:hover .sale p {
+  font-size: 14px;
+  font-weight: 600;
+}
+section .carts .cart-box .svg-icon svg {
+  width: 19px;
+  fill: rgb(47, 26, 196);
+}
+section .carts .cart-box .svg-icon .shopping {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 100px;
+}
+section .carts .cart-box .svg-icon .shopping svg {
+  width: 0px;
+  transition: all 0.5s;
+}
+section .carts .cart-box .svg-icon .shopping:hover {
+  background: rgb(238, 239, 251);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
+}
+section .carts .cart-box .veb {
+  transform: rotate(320deg);
+}
+section .carts .cart-box .mon {
+  transform: translateX(-130px);
+}
+section .carts .cart-box .sale {
+  width: 100px;
+  height: 40px;
+  border-radius: 100px 0px 100px 0px;
+  text-align: center;
+  display: flex;
+  transform: translateY(70px);
+  align-items: center;
+  transition: all 0.5s;
+  justify-content: center;
+}
+section .carts .cart-box .sale p {
+  font-size: 0px;
+  transition: all 0.5s;
+  font-weight: 600;
+}
+section .carts .cart-box .none {
+  transform: translateX(-50px);
+}
+section .carts .cart-box .p-text {
+  display: flex;
+  justify-content: space-between;
+}
+section .carts .cart-box .p-text p {
+  color: rgb(21, 24, 117);
+}
+section .carts .cart-box .p-text .uch {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+section .carts .cart-box .p-text .uch del {
+  color: rgb(251, 36, 72);
+}
+section .carts .cart-box .p-text .uch.activ {
+  display: none;
+}
+section .yoq {
+  display: none;
+  text-align: center;
+  color: rgb(21, 24, 117);
+  align-items: center;
+  padding: 10px 0px;
+  justify-content: center;
+}
+section .pages {
+  display: none;
+}
+section .pages .shop-grid h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+section .pages .shop-grid span {
+  display: flex;
+  gap: 3px;
+  font-size: 16px;
+  font-weight: 500;
+}
+section .pages .shop-grid span p:nth-child(2) {
+  color: rgb(251, 46, 134);
+}
+section .pages .shop-grid .page {
+  padding: 90px 0px;
+}
+section .pages .absalut {
+  width: 100%;
+  overflow: hidden;
+  height: 286px;
+  background: rgb(246, 245, 255);
+  position: absolute;
+  left: 0;
+}
+section .cart-bos {
+  margin-bottom: 40px;
+  display: flex;
+  padding: 50px 0px;
+  justify-content: space-between;
+}
+section .cart-bos .parts {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+section .cart-bos .parts .per input {
+  width: 55px;
+  height: 23px;
+  outline: none;
+  border: 0px solid;
+  border-radius: 1px;
+}
+section .cart-bos .parts .per .inp-cart {
+  width: 80px;
+  height: 25px;
+  border-radius: 1px;
+  border: 1px solid rgb(231, 230, 239);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .cart-bos .parts .view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 25px;
+  border: 1px solid rgb(231, 230, 239);
+}
+section .cart-bos .parts .view input {
+  width: 150px;
+  height: 23px;
+  border-radius: 1px;
+  border: 0px solid rgb(231, 230, 239);
+  outline: none;
+}
+section .cart-bos .parts div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+section .cart-bos .parts div img {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+section .mon {
+  padding: 170px 0px;
+  transform: translateY(130px);
+}
+section .mon select {
+  outline: none;
+  width: 96px;
+  height: 28px;
+  border: 1px solid rgb(231, 230, 239);
+  cursor: pointer;
+  text-align: center;
+  color: rgb(138, 143, 185);
+}
+section .cartlar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+section .cartlar .cart-1 {
+  width: 270px;
+  margin-bottom: 30px;
+  text-align: center;
+  align-items: center;
+}
+section .cartlar .cart-1 .img-cart {
+  width: 270px;
+  height: 280px;
+  background: rgb(246, 247, 251);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+section .cartlar .cart-1 .img-cart:hover {
+  background: rgb(235, 244, 243);
+}
+section .cartlar .cart-1 .img-cart:hover .iconcalar svg {
+  width: 16px;
+}
+section .cartlar .cart-1 .img-cart img {
+  overflow: hidden;
+  width: 201px;
+  height: 201px;
+}
+section .cartlar .cart-1 .iconcalar {
+  transform: translateY(70px);
+}
+section .cartlar .cart-1 .iconcalar svg {
+  width: 0px;
+  transition: all 0.5s;
+  fill: rgb(21, 24, 117);
+}
+section .cartlar .cart-1 .iconcalar .shops {
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+section .cartlar .cart-1 .iconcalar .shops:hover {
+  background-color: white;
+  box-shadow: 0px 8px 40px 0px rgba(49, 32, 138, 0.05);
+}
+section .cartlar .cart-1 .iconcalar .searchs {
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+section .cartlar .cart-1 .iconcalar .searchs:hover {
+  background-color: white;
+  box-shadow: 0px 8px 40px 0px rgba(49, 32, 138, 0.05);
+}
+section .cartlar .cart-1 .iconcalar .harts {
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .cartlar .cart-1 .iconcalar .harts:hover {
+  background-color: white;
+  box-shadow: 0px 8px 40px 0px rgba(49, 32, 138, 0.05);
+}
+section .cartlar .cart-1 h2 {
+  font-size: 18px;
+  padding: 10px 0px;
+  font-weight: 700;
+  color: rgb(21, 24, 117);
+}
+section .cartlar .cart-1 span {
+  display: flex;
+  gap: 10px;
+  padding: 10px 85px;
+  text-align: center;
+  align-items: center;
+}
+section .cartlar .cart-1 span p {
+  color: rgb(21, 24, 117);
+  font-size: 14px;
+  font-weight: 400;
+}
+section .cartlar .cart-1 span del {
+  color: rgb(251, 46, 134);
+  font-size: 14px;
+  font-weight: 400;
+}
+section .cartlar .cart-1 .yellow {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: rgb(222, 144, 52);
+  border-radius: 100px;
+}
+section .cartlar .cart-1 .pink {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: rgb(236, 66, 162);
+  border-radius: 100px;
+}
+section .cartlar .cart-1 .darkblue {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: rgb(133, 104, 255);
+  border-radius: 100px;
+}
+section .cartlar .cart-1 .rang {
+  padding: 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 330px;
+  background: rgb(238, 239, 251);
+}
+footer .footer-qism {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 5px;
+}
+footer .footer-qism h2 {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+footer .footer-qism h1 {
+  margin-bottom: 20px;
+}
+footer .footer-qism ul {
+  padding: 20px 0px;
+}
+footer .footer-qism ul li {
+  margin-bottom: 16px;
+  list-style: none;
+  color: rgb(138, 143, 185);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+footer .footer-qism ul li:hover {
+  color: rgb(251, 46, 134);
+}
+footer .footer-qism .inp-taype {
+  width: 346px;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-qism .inp-taype button {
+  width: 124px;
+  height: 37px;
+  cursor: pointer;
+  transform: translateX(10px);
+  background: rgb(251, 46, 134);
+  border: 0px solid;
+  border-radius: 2px;
+  color: white;
+  transition: all 0.5s;
+  font-size: 16px;
+  font-weight: 500;
+}
+footer .footer-qism .inp-taype button:hover {
+  background: rgba(251, 46, 135, 0.74);
+}
+footer .footer-qism .inp-taype input {
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(138, 143, 185);
+  border: 0px solid;
+}
+footer .footer-qism .inp-taype input::-moz-placeholder {
+  color: rgb(138, 143, 185);
+}
+footer .footer-qism .inp-taype input::placeholder {
+  color: rgb(138, 143, 185);
+}
+
+.folse {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 800;
+  padding: 40px 0px;
+  color: rgb(251, 46, 134);
+}
+
+.main-icon {
+  position: absolute;
+  left: 0;
+  transform: translateY(320px);
+  width: 100%;
+  height: 50px;
+  background: rgb(231, 228, 248);
+}
+.main-icon .inisg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 50px;
+}
+.main-icon .inisg p {
+  color: rgb(157, 160, 174);
+}
+.main-icon .inisg svg {
+  width: 20px;
+}
+.main-icon .inisg .flex {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.main-icon .inisg .flex .face {
+  width: 30px;
+  border-radius: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  background: rgb(21, 24, 117);
+}
+.main-icon .inisg .flex .face svg {
+  fill: white;
+}
+.main-icon .inisg .flex .face:hover {
+  background-color: rgba(21, 24, 117, 0.903);
+}
+.main-icon .inisg .flex .inis {
+  width: 30px;
+  border-radius: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  background: rgb(21, 24, 117);
+}
+.main-icon .inisg .flex .inis svg {
+  fill: white;
+}
+.main-icon .inisg .flex .inis:hover {
+  background-color: rgba(21, 24, 117, 0.903);
+}
+.main-icon .inisg .flex .telegram svg {
+  width: 35px;
+  fill: rgb(21, 24, 117);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.main-icon .inisg .flex .telegram svg:hover {
+  fill: rgba(21, 24, 117, 0.903);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 750;
+  color: rgba(21, 24, 117, 0.903);
+}
+
+.send-qismi {
+  width: 100%;
+  height: 1200px;
+}
+.send-qismi .futs {
+  height: 286px;
+  background: rgb(246, 245, 255);
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.send-qismi .futs .curt {
+  padding: 100px 20px;
+}
+.send-qismi .futs .curt h1 {
+  font-size: rgb(16, 23, 80);
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.send-qismi .futs .curt span {
+  display: flex;
+  gap: 3px;
+  color: rgb(16, 23, 80);
+  font-size: 16px;
+  font-weight: 500;
+}
+.send-qismi .futs .curt span p:nth-child(2) {
+  color: rgb(251, 46, 134);
+}
+.send-qismi .products {
+  padding: 100px 20px;
+  transform: translateY(230px);
+}
+.send-qismi .products .nekto {
+  color: rgb(29, 49, 120);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.send-qismi .products .nekto .total {
+  display: flex;
+  align-items: center;
+  gap: 125px;
+}
+.send-qismi .products .nekto .total h3:nth-child(2) {
+  transform: translateX(-50px);
+}
+.send-qismi .products .nekto .total h3:nth-child(3) {
+  transform: translateX(-110px);
+}
+.send-qismi .products .nekto .then {
+  transform: translateX(-180px);
+}
+.send-qismi .rec {
+  display: none;
+}
+.send-qismi .send-qismi {
+  width: 100%;
+  min-height: 800px;
+  background: white;
+}
+.send-qismi .pages {
+  display: none;
+}
+.send-qismi .swip-carts {
+  display: block;
+}
+.send-qismi .boos-cart {
+  display: none;
+}
+.send-qismi .clear {
+  width: 718px;
+  margin-bottom: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.send-qismi .clear button {
+  width: 134px;
+  height: 39px;
+  background: rgb(251, 46, 134);
+  border: 0px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 16px;
+  font-weight: 600;
+}
+.send-qismi .clear button:hover {
+  background: rgb(25, 209, 111);
+}
+.send-qismi .clear.activ {
+  width: 718px;
+  margin-bottom: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.send-qismi .clear.activ button {
+  width: 134px;
+  height: 39px;
+  background: rgb(48, 47, 48);
+  border: 0px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 16px;
+  font-weight: 600;
+}
+.send-qismi .clear.activ button:hover {
+  background: rgb(48, 47, 48);
+}
+.send-qismi .ad-to-cart {
+  width: 718px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(21, 36, 94);
+}
+.send-qismi .ad-to-cart p {
+  color: rgb(161, 168, 193);
+  margin-bottom: 10px;
+}
+.send-qismi .ad-to-cart h4 {
+  margin-bottom: 10px;
+}
+.send-qismi .ad-to-cart .kupay {
+  width: 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  border: 1px solid rgb(190, 191, 194);
+  border-radius: 1px;
+  background-color: rgb(190, 191, 194);
+}
+.send-qismi .ad-to-cart .kupay .minus {
+  width: 12px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: rgb(190, 191, 194);
+  background: rgb(231, 231, 239);
+}
+.send-qismi .ad-to-cart .kupay .minus:hover {
+  color: white;
+  background: rgb(25, 209, 111);
+}
+.send-qismi .ad-to-cart .kupay .plus {
+  width: 12px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: rgb(190, 191, 194);
+  background: rgb(231, 231, 239);
+}
+.send-qismi .ad-to-cart .kupay .plus:hover {
+  color: white;
+  background: rgb(25, 209, 111);
+}
+.send-qismi .ad-to-cart .euro {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.send-qismi .ad-to-cart svg {
+  width: 20px;
+  transform: translateY(-38px);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.send-qismi .ad-to-cart svg:hover {
+  fill: red;
+}
+.send-qismi .ad-to-cart img {
+  width: 83px;
+  height: 87px;
+  border-radius: 3px;
+}
+.send-qismi .ad-to-cart .svg-none {
+  transform: translateX(-12px);
+}
+.send-qismi .ad-to-cart .flex-no {
+  display: flex;
+  align-items: center;
+}
+.send-qismi .sub-total {
+  width: 371px;
+  border: 2px solid rgb(232, 230, 241);
+  background: rgb(244, 244, 252);
+  border-radius: 3px;
+  margin-bottom: 40px;
+}
+.send-qismi .sub-total input {
+  width: 312px;
+  height: 40px;
+  border: 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(157, 162, 181);
+  outline: none;
+  background-color: transparent;
+}
+.send-qismi .sub-total input::-moz-placeholder {
+  color: rgb(197, 203, 227);
+}
+.send-qismi .sub-total input::placeholder {
+  color: rgb(197, 203, 227);
+}
+.send-qismi .text {
+  padding: 50px 20px;
+}
+.send-qismi .text hr {
+  margin-bottom: 50px;
+}
+.send-qismi .text button {
+  cursor: pointer;
+  background-color: rgb(25, 209, 111);
+  border: 0px;
+  height: 40px;
+  width: 312px;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.send-qismi .react .subster {
+  padding: 30px 20px;
+  margin-bottom: 20px;
+}
+.send-qismi .react .toto {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+.send-qismi .react .checs {
+  padding: 10px 20px;
+}
+.send-qismi .react .checs .chec {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.send-qismi .react .checs .chec svg {
+  width: 15px;
+  fill: rgb(25, 209, 111);
+}
+.send-qismi .react .checs .chec p {
+  color: rgb(138, 145, 171);
+  font-size: 12px;
+  font-weight: 400;
+}
+.send-qismi .react .chec-btn {
+  padding: 30px 20px;
+}
+.send-qismi .react .chec-btn button {
+  cursor: pointer;
+  background-color: rgb(25, 209, 111);
+  border: 0px;
+  height: 40px;
+  width: 312px;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.send-qismi .react .subs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: rgb(21, 36, 94);
+}
+.send-qismi .react .subs p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.send-qismi .react .subs h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.send-qismi .react .totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(21, 36, 94);
+}
+.send-qismi .react .totals p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.send-qismi .react .totals h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.send-qismi .react h4 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: rgb(29, 49, 120);
+  text-align: center;
+}
+.send-qismi .diamo {
+  display: flex;
+  gap: 80px;
+}
+
+footer {
+  padding: 0px 20px;
+}
+
+section {
+  padding: 0px 20px;
+}
+
+.boos-cart {
+  display: none;
+}
+.boos-cart .creat {
+  width: 100%;
+}
+.boos-cart .detals {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 286px;
+  background: rgb(246, 245, 255);
+}
+.boos-cart .detals .boss {
+  padding: 100px 20px;
+}
+.boos-cart .detals .boss h1 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 700;
+}
+.boos-cart .detals .boss span {
+  display: flex;
+  gap: 3px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.boos-cart .detals .boss span p:nth-child(2) {
+  color: rgb(251, 46, 134);
+}
+.boos-cart .malu {
+  padding: 250px 20px;
+  transform: translateY(100px);
+  width: 100%;
+}
+.boos-cart .malu .malumot {
+  width: 100%;
+  height: 509px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 25px 10px rgb(246, 244, 253);
+  border-radius: 2px;
+}
+.boos-cart .malu .malumot .hottel {
+  display: flex;
+  gap: 20px;
+  padding: 13px 20px;
+}
+.boos-cart .malu .malumot .imgs1 {
+  transform: rotate(90deg);
+}
+.boos-cart .malu .malumot .imgs2 {
+  transform: rotate(200deg);
+}
+.boos-cart .malu .malumot .imgs3 {
+  transform: rotate(300deg);
+}
+.boos-cart .malu .malumot span {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  padding: 30px 0px;
+  font-weight: 400;
+  align-items: center;
+}
+.boos-cart .malu .malumot span p {
+  margin-bottom: 5px;
+  color: rgb(21, 24, 117);
+}
+.boos-cart .malu .malumot span del {
+  color: rgb(251, 46, 134);
+}
+.boos-cart .malu .malumot p {
+  color: rgb(13, 19, 78);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.boos-cart .malu .malumot button {
+  width: 200px;
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid rgb(13, 19, 78);
+  color: rgb(13, 19, 78);
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.boos-cart .malu .malumot button:hover {
+  background-color: rgb(13, 19, 78);
+  color: rgb(255, 255, 255);
+}
+.boos-cart .malu .malumot img {
+  cursor: pointer;
+}
+.boos-cart .malu .malumot .desc {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: rgb(21, 24, 117);
+}
+.boos-cart .malu .malumot h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: rgb(21, 24, 117);
+}
+.boos-cart .malu .malumot h1 {
+  color: rgb(13, 19, 78);
+  font-size: 36px;
+  font-weight: 600;
+}
+.boos-cart .malu .malumot .flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.boos-cart .malu .malumot .flex .inis {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: rgb(13, 19, 78);
+}
+.boos-cart .malu .malumot .flex .inis:hover {
+  background-color: rgb(251, 46, 134);
+}
+.boos-cart .malu .malumot .flex .face {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: rgb(13, 19, 78);
+}
+.boos-cart .malu .malumot .flex .face:hover {
+  background-color: rgb(251, 46, 134);
+}
+.boos-cart .malu .malumot .flex .telegram svg {
+  width: 40px;
+  fill: rgb(13, 19, 78);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.boos-cart .malu .malumot .flex .telegram svg:hover {
+  fill: rgb(251, 46, 134);
+}
+.boos-cart .malu .malumot .flex svg {
+  fill: white;
+  width: 20px;
+}
+.boos-cart .malu .malumot .img3 {
+  width: 151px;
+}
+.boos-cart .malu .malumot .img3 img {
+  width: 151px;
+  margin-bottom: 5px;
+  height: 155px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.boos-cart .malu .malumot .sumka img {
+  width: 375px;
+  height: 487px;
+  border-radius: 3px;
+}
+
+.eus.activ {
+  width: 740px;
+  height: 570px;
+  overflow-y: scroll;
+}/*# sourceMappingURL=style.css.map */

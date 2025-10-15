@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hekto</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <main>
+        <div class="wrapper container">
+            <div class="cal">
+                <div class="email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+                    </svg>
+                    <p>fazliddinnizomiddinov12@gmail.com</p>
+                </div>
+                <div class="call">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M376 32C504.1 32 608 135.9 608 264C608 277.3 597.3 288 584 288C570.7 288 560 277.3 560 264C560 162.4 477.6 80 376 80C362.7 80 352 69.3 352 56C352 42.7 362.7 32 376 32zM384 224C401.7 224 416 238.3 416 256C416 273.7 401.7 288 384 288C366.3 288 352 273.7 352 256C352 238.3 366.3 224 384 224zM352 152C352 138.7 362.7 128 376 128C451.1 128 512 188.9 512 264C512 277.3 501.3 288 488 288C474.7 288 464 277.3 464 264C464 215.4 424.6 176 376 176C362.7 176 352 165.3 352 152zM176.1 65.4C195.8 60 216.4 70.1 224.2 88.9L264.7 186.2C271.6 202.7 266.8 221.8 252.9 233.2L208.8 269.3C241.3 340.9 297.8 399.3 368.1 434.2L406.7 387C418 373.1 437.1 368.4 453.7 375.2L551 415.8C569.8 423.6 579.9 444.2 574.5 463.9L573 469.4C555.4 534.1 492.9 589.3 416.6 573.2C241.6 536.1 103.9 398.4 66.8 223.4C50.7 147.1 105.9 84.6 170.5 66.9L176 65.4z" />
+                    </svg>
+                    <p>+998 91 226 2988</p>
+                </div>
+            </div>
+            <div class="tils">
+                <div class="til">
+                    <p>Eng</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z" />
+                    </svg>
+                </div>
+                <div class="usd">
+                    <select onchange="setCurrency(event)">
+                        <option value="USD">USD</option>
+                        <option value="UZS">UZS</option>
+                    </select>
+                </div>
+                <div class="login">
+                    <p>Login</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z" />
+                    </svg>
+                </div>
+                <div class="hart">
+                    <p>Wishlist</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z" />
+                    </svg>
+                </div>
+                <div class="shop">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M24 48C10.7 48 0 58.7 0 72C0 85.3 10.7 96 24 96L69.3 96C73.2 96 76.5 98.8 77.2 102.6L129.3 388.9C135.5 423.1 165.3 448 200.1 448L456 448C469.3 448 480 437.3 480 424C480 410.7 469.3 400 456 400L200.1 400C188.5 400 178.6 391.7 176.5 380.3L171.4 352L475 352C505.8 352 532.2 330.1 537.9 299.8L568.9 133.9C572.6 114.2 557.5 96 537.4 96L124.7 96L124.3 94C119.5 67.4 96.3 48 69.2 48L24 48zM208 576C234.5 576 256 554.5 256 528C256 501.5 234.5 480 208 480C181.5 480 160 501.5 160 528C160 554.5 181.5 576 208 576zM432 576C458.5 576 480 554.5 480 528C480 501.5 458.5 480 432 480C405.5 480 384 501.5 384 528C384 554.5 405.5 576 432 576z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="container">
+        <div class="wrap">
+            <div class="cold">
+                <div>
+                    <h1>Hekto</h1>
+                </div>
+                <ul>
+                    <li class="home">Home
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path
+                                d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z" />
+                        </svg>
+                    </li>
+                    <li class="academy">Pages</li>
+                    <li>Products</li>
+                    <li>Blog</li>
+                    <li>Shop</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            
+            <div class="inp">
+                <div class="inplet">
+                    <input id="inp-search" type="text" placeholder="">
+                </div>
+                <div class="search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="click">
+            <div class="swip-carts">
+                <div class="cart">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swip-pg">
+                                    <div class="lamp">
+                                        <div>
+                                            <img class="lampa" src="./imgs/lampa.png" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="best">Best Furniture For Your Castle....</p>
+                                            <h1>New Furniture Collection Trends in 2020</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est
+                                                adipiscing
+                                                in
+                                                phasellus non in justo.</p>
+                                            <button>Shop Now</button>
+                                        </div>
+                                        <div>
+                                            <img class="divan" src="./imgs/diavn.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swip-pg">
+                                    <div class="lamp">
+                                        <div>
+                                            <img class="lampa" src="./imgs/lampa.png" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="best">Best Furniture For Your Castle....</p>
+                                            <h1>New Furniture Collection Trends in 2020</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est
+                                                adipiscing
+                                                in phasellus non in justo.</p>
+                                            <button>Shop Now</button>
+                                        </div>
+                                        <div>
+                                            <img class="divan" src="./imgs/diavn.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swip-pg">
+                                    <div class="lamp">
+                                        <div>
+                                            <img class="lampa" src="./imgs/lampa.png" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="best">Best Furniture For Your Castle....</p>
+                                            <h1>New Furniture Collection Trends in 2020</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est
+                                                adipiscing
+                                                in
+                                                phasellus non in justo.</p>
+                                            <button>Shop Now</button>
+                                        </div>
+                                        <div>
+                                            <img class="divan" src="./imgs/diavn.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="product">
+                        <h1>Leatest Products</h1>
+                        <ul>
+                            <li>New Arrival</li>
+                            <li>Best Seller</li>
+                            <li>Featured</li>
+                            <li>Special Offer</li>
+                        </ul>
+                        <div class="box">
+                            <article class="clock">
+                                <p class="hours"></p>:
+                                <p class="minutes"></p>:
+                                <p class="seconds"></p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carts">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pages">
+            <div class="absalut">
+                <div class="shop-grid container">
+                    <div class="page">
+                        <h1>Shop Grid Default</h1>
+                        <span>
+                            <p>Home . Pages</p>
+                            <p>. Shop Grid Default</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mon">
+                <div class="cart-bos">
+                    <div>
+                        <h2>Ecommerce Acceories & Fashion item </h2>
+                        <p>About 9,620 results (0.62 seconds)</p>
+                    </div>
+                    <div class="parts">
+                        <div class="per">
+                            <p>Per Page:</p>
+                            <div class="inp-cart"><input type="text" id="search-data" placeholder=""></div>
+                        </div>
+                        <div>
+                            <p>Sort By:</p>
+                            <select onchange="handleSelect(event)">
+                                <option value="all">Hammasi</option>
+                                <option value="Shkaf">Shkaf</option>
+                                <option value="Telefon">Telefon</option>
+                                <option value="Sumka">Sumka</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p>View:</p>
+                            <img src="./imgs/cate.png" alt="">
+                            <img src="./imgs/burger.png" alt="">
+                        </div>
+                        <div class="view">
+                            <input type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="boxs">
+                    <article class="clock">
+                        <p class="hour"></p>:
+                        <p class="minute"></p>:
+                        <p class="second"></p>
+                    </article>
+                </div>
+                <div class="cartlar">
+                </div>
+                <div class="loader">
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="boos-cart">
+        </div>
+        <div class="rec">
+            <!-- <div class="send-qismi"> -->
+            <!-- <div class="futs">
+                <div class="container">
+                    <div class="curt">
+                        <h1>Shopping Curt</h1>
+                        <span>
+                            <p>Home . Pages</p>
+                            <p>. Shop Grid Default</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="products">
+                <div class="nekto">
+                    <div>
+                        <h3>Product</h3>
+                    </div>
+                    <div class="total">
+                        <h3>Price</h3>
+                        <h3>Quantity</h3>
+                        <h3>Total</h3>
+                    </div>
+                    <div>
+                        <h3 class="then">Cart Totals</h3>
+                    </div>
+                </div>
+                <div class="diamo">
+                    <div class="add-to">
+                         <div class="eus">
+                            <div class="ad-to-cart">
+                            <div class="euro">
+                                <div class="flex-no">
+                                    <img src="./imgs/rak.png" alt="">
+                                    <div class="svg-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z" />
+                                    </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>Ut diam consequat</h4>
+                                    <p>Color: Brown</p>
+                                    <p>Size: XL</p>
+                                </div>
+                            </div>
+                            <h3>$32.00</h3>
+                            <div class="kupay">
+                                <div class="minus">
+                                    -
+                                </div>
+                                <div class="plus">
+                                    +
+                                </div>
+                            </div>
+                            <h3>£219.00</h3>
+                        </div>
+                        <hr>
+                        </div>
+                        <div class="clear">
+                            <div>
+                                <button>Update Curt</button>
+                            </div>
+                            <div>
+                                <button>Clear Curt</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="react">
+                        <div class="sub-total">
+                            <div class="subster">
+                                <div class="subs">
+                                    <h3>Subtotals:</h3>
+                                    <p>£219.00</p>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="toto">
+                                <div class="totals">
+                                    <h3>Totals::</h3>
+                                    <p>£219.00</p>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="checs">
+                                <div class="chec">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z" />
+                                    </svg>
+                                    <p>Shipping & taxes calculated at checkout</p>
+                                </div>
+                            </div>
+                            <div class="chec-btn">
+                                <button>Proceed To Checkout</button>
+                            </div>
+                        </div>
+                        <h4>Calculate Shopping</h4>
+                        <div class="sub-total">
+                            <div class="text">
+                                <input type="text" placeholder="PromoCode...">
+                            <hr>
+                            <div class="btn">
+                                <button>Proceed To Checkout</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-qism container">
+            <div>
+                <h1>Hekto</h1>
+                <div class="inp-taype">
+                    <input type="text" placeholder="Enter Email Address...">
+                    <button>Sign Up</button>
+                </div>
+                <ul>
+                    <li>Contact Info</li>
+                    <li>17 Princess Road, London, Greater London NW1 8JR, UK</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Catagories</h2>
+                <ul>
+                    <li>Laptops & Computers</li>
+                    <li>Cameras & Photography</li>
+                    <li>Smart Phones & Tablets</li>
+                    <li>Video Games & Consoles</li>
+                    <li>Waterproof Headphones</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Customer Care</h2>
+                <ul>
+                    <li>My Account</li>
+                    <li>Discount</li>
+                    <li>Returns</li>
+                    <li>Orders History</li>
+                    <li>Order Tracking</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Pages</h2>
+                <ul>
+                    <li>Blog</li>
+                    <li>Browse the Shop</li>
+                    <li>Category</li>
+                    <li>Pre-Built Pages</li>
+                    <li>Visual Composer Elements</li>
+                    <li>WooCommerce Pages</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="main-icon">
+        <div class="ins container">
+            <div class="inisg">
+                <p>©Webecy - All Rights Reserved</p>
+                <div class="flex">
+                    <a href="https://www.facebook.com/login/">
+                        <div class="face">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path
+                                d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" />
+                        </svg>
+                    </div>
+                    </a>
+                    <a href="https://www.instagram.com/accounts/onetap/">
+                        <div class="inis">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path
+                                d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z" />
+                        </svg>
+                    </div>
+                    </a>
+                    <a href="https://t.me/Fazliddin_iq">
+                        <div class="telegram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path
+                                d="M320 72C183 72 72 183 72 320C72 457 183 568 320 568C457 568 568 457 568 320C568 183 457 72 320 72zM435 240.7C431.3 279.9 415.1 375.1 406.9 419C403.4 437.6 396.6 443.8 390 444.4C375.6 445.7 364.7 434.9 350.7 425.7C328.9 411.4 316.5 402.5 295.4 388.5C270.9 372.4 286.8 363.5 300.7 349C304.4 345.2 367.8 287.5 369 282.3C369.2 281.6 369.3 279.2 367.8 277.9C366.3 276.6 364.2 277.1 362.7 277.4C360.5 277.9 325.6 300.9 258.1 346.5C248.2 353.3 239.2 356.6 231.2 356.4C222.3 356.2 205.3 351.4 192.6 347.3C177.1 342.3 164.7 339.6 165.8 331C166.4 326.5 172.5 322 184.2 317.3C256.5 285.8 304.7 265 328.8 255C397.7 226.4 412 221.4 421.3 221.2C423.4 221.2 427.9 221.7 430.9 224.1C432.9 225.8 434.1 228.2 434.4 230.8C434.9 234 435 237.3 434.8 240.6z" />
+                        </svg>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
