@@ -17,56 +17,7 @@ var swiper = new Swiper(".mySwiper", {
 let cart = []; 
 let AllData = [];
 
-let currentCurrency = "USD";
-const USD_RATE = 12500; // 1 USD = 12500 UZS
 
-// Narxlarni formatlash funksiyasi
-function formatPrice(price) {
-  if (currentCurrency === "UZS") {
-    return Math.round(price * USD_RATE).toLocaleString() + " so'm";
-  } else {
-    return "$" + price.toFixed(2);
-  }
-}
-
-// Eski narxlarni formatlash funksiyasi
-function formatOldPrice(price) {
-  if (currentCurrency === "UZS") {
-    return Math.round(price * 1.2 * USD_RATE).toLocaleString() + " so'm";
-  } else {
-    return "$" + (price * 1.2).toFixed(2);
-  }
-}
-
-// Valyutani o'zgartirish funksiyasi
-function setCurrency(event) {
-  currentCurrency = event.target.value;
-  // Barcha mahsulotlarni qayta chizish
-  displaydata(AllData);
-  // Cart.json'dan olingan ma'lumotlarni qayta chizish
-  displaydatas(aldata.carts);
-  // Savatdagi mahsulotlarni qayta chizish
-  requad();
-}
-
-// HTML qismiga qo'shiladigan kod
-document.addEventListener("DOMContentLoaded", function() {
-  // Valyuta tanlovini qo'shish
-  const currencySelector = `
-    <div class="usd">
-      <select onchange="setCurrency(event)">
-        <option value="USD">USD</option>
-        <option value="UZS">UZS</option>
-      </select>
-    </div>
-  `;
-  
-  // Valyuta tanlovini header qismiga qo'shish
-  const header = document.querySelector("header");
-  if (header) {
-    header.insertAdjacentHTML("beforeend", currencySelector);
-  }
-});
 async function getdata(){
     document.querySelector(".loader").style.display = "flex"
     const api = await fetch("./pg.json")
