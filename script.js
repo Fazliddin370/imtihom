@@ -369,6 +369,7 @@ function requad(){
             eus.classList.toggle("activ")
         }
         let sum = document.querySelector(".sum");
+        sum.textContent = `${cart.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')), 0).toFixed(2)}$`;
 
         const minusBtn = shopcart.querySelector(".minus")
         const plusBtn = shopcart.querySelector(".plus")
@@ -384,7 +385,6 @@ function requad(){
                 totalPrice.textContent = `$${(parseFloat(item.price.replace('$', '')) * quantity).toFixed(2)}`
             }
         })
-        
         plusBtn.addEventListener("click", function() {
             const itemIndex = parseInt(this.getAttribute("data-index"))
             let quantity = parseInt(quantitySpan.textContent)
@@ -396,14 +396,23 @@ function requad(){
         eus.append(shopcart)
     })
 }
-
-
-
-
-
-
-
-
+let modal = document.querySelector(".modalp")
+let promo = document.querySelector(".promo")
+let modalx = document.querySelector(".modalx")
+let chec = document.querySelector(".checout")
+chec.addEventListener("click", ()=>{
+    if(promo.value === "Hekto" || promo.value === "hekto" || promo.value === "HEKTO"){
+        modal.classList.toggle("activ")
+        setTimeout(()=> {
+            modal.classList.remove("activ")
+        }, 5000);
+    }else{
+        modalx.classList.toggle("activ")
+        setTimeout(()=> {
+            modalx.classList.remove("activ")
+        }, 5000);
+    }
+})
 const main = document.querySelector("main")
 main.style.display = "block"
 let shop = document.querySelector(".shop")

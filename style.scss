@@ -1236,7 +1236,6 @@ section{
             position: absolute;
             left: 0;
             width: 100%;
-            // height: 286px;
             background: rgba(246, 245, 255, 1);
             .boss{
                 padding: 100px 20px;
@@ -1262,7 +1261,7 @@ section{
             width: 100%;
             .malumot{
             width: 100%;
-            height: 509px;
+            // height: 509px;
             background: rgba(255, 255, 255, 1);
             box-shadow: 0px 0px 25px 10px rgba(246, 244, 253, 1);
             border-radius: 2px;
@@ -1399,6 +1398,7 @@ section{
             .sumka{
                 img{
                     height: 487px;
+                    object-fit: cover;
                     border-radius: 3px;
                 }
             }
@@ -1415,4 +1415,113 @@ section{
 }
 .qidirno{
     color: aqua;
+}
+
+
+
+.modalp{
+    transform: translateY(-100px);
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    .oyna{
+        z-index: 2;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        transform: translateX(960px);
+        gap: 10px;
+        border-radius: 10px;
+        background-color: rgb(16, 215, 16);
+        h3{
+            color: white;
+        }
+        svg{
+            fill: white;
+            width: 20px;
+        }
+    }
+}
+.modalp.activ{
+    transition: all 0.5s;
+    transform: translateY(45px);
+}
+.modalx.activ{
+    transition: all 0.5s;
+    transform: translateY(15px);
+}
+.modalx{
+    transform: translateY(-100px);
+    position: fixed;
+    top: 0;
+    transition: all 0.5s;
+    .oynax{
+        z-index: 2;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        margin-top: 30px;
+        transform: translateX(960px);
+        gap: 10px;
+        border-radius: 10px;
+        background-color: red;
+        h3{
+            color: white;
+        }
+        svg{
+            fill: white;
+            width: 20px;
+        }
+    }
+}
+
+
+
+@media(max-width: 1915px){
+    section{
+        .carts{
+            .cart-box{
+                .img-box{
+                    width: 400px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1138px){
+    section{
+        .carts{
+           .cart-box{
+            width: 340px;
+             .img-box{
+                width: 340px;
+            }
+           }
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+    }
+    .swiper{
+        height: 300px;
+    .cart{
+        height: 300px;
+    }}
+    .swip-pg{
+        height: 300px;
+        .lamp{
+        .divan{
+        width: 340px;
+    }
+    }
+    }
+    .cartlar{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    }
 }
