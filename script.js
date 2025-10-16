@@ -14,9 +14,59 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-
+let cart = []; 
 let AllData = [];
 
+let currentCurrency = "USD";
+const USD_RATE = 12500; // 1 USD = 12500 UZS
+
+// Narxlarni formatlash funksiyasi
+function formatPrice(price) {
+  if (currentCurrency === "UZS") {
+    return Math.round(price * USD_RATE).toLocaleString() + " so'm";
+  } else {
+    return "$" + price.toFixed(2);
+  }
+}
+
+// Eski narxlarni formatlash funksiyasi
+function formatOldPrice(price) {
+  if (currentCurrency === "UZS") {
+    return Math.round(price * 1.2 * USD_RATE).toLocaleString() + " so'm";
+  } else {
+    return "$" + (price * 1.2).toFixed(2);
+  }
+}
+
+// Valyutani o'zgartirish funksiyasi
+function setCurrency(event) {
+  currentCurrency = event.target.value;
+  // Barcha mahsulotlarni qayta chizish
+  displaydata(AllData);
+  // Cart.json'dan olingan ma'lumotlarni qayta chizish
+  displaydatas(aldata.carts);
+  // Savatdagi mahsulotlarni qayta chizish
+  requad();
+}
+
+// HTML qismiga qo'shiladigan kod
+document.addEventListener("DOMContentLoaded", function() {
+  // Valyuta tanlovini qo'shish
+  const currencySelector = `
+    <div class="usd">
+      <select onchange="setCurrency(event)">
+        <option value="USD">USD</option>
+        <option value="UZS">UZS</option>
+      </select>
+    </div>
+  `;
+  
+  // Valyuta tanlovini header qismiga qo'shish
+  const header = document.querySelector("header");
+  if (header) {
+    header.insertAdjacentHTML("beforeend", currencySelector);
+  }
+});
 async function getdata(){
     document.querySelector(".loader").style.display = "flex"
     const api = await fetch("./pg.json")
@@ -101,9 +151,10 @@ function displaydata(data){
                             </div>
                             <div>
                                 <h1>${item.title}</h1>
-                                <span>
-                                    <p>${item.price}</p>
-                                    <del></del>
+                                 <p class="add cost">${item.price}</p>
+                                <span class="uch">
+                                    <p>${item.stars}</p>
+                                    <del>${item.price}</del>
                                 </span>
                                 <p>Color</p>
                                 <button class="promo-btn">Add To Cart</button>
@@ -136,206 +187,24 @@ function displaydata(data){
             `
             boss.append(creat)
                        let ads = document.querySelector(".promo-btn")
-            ads.addEventListener("click", ()=>{                
-                alert("Buyurtmangiz savatga qushildi...")
+             ads.addEventListener("click", ()=> {
+                addtocart(item) 
             })
-            let shop = document.querySelector(".shop");
-let pro = document.querySelector(".rec");
-let swip = document.querySelector(".swip-carts");
-let diamo = document.querySelector(".rec");
-let creats = document.querySelector(".boos-cart");
-shop.addEventListener("click", ()=>{
-    creats.style.display = "none";
-    pro.style.display = "block";
-    pages.style.display = "none";
-    swip.style.display = "none";
-    diamo.innerHTML = "";
-    let add = document.createElement("div");
-    add.setAttribute("class", "send-qismi");
-    add.innerHTML += `
-    <div class="futs">
-                <div class="container">
-                    <div class="curt">
-                        <h1>Shopping Curt</h1>
-                        <span>
-                            <p>Home . Pages</p>
-                            <p>. Shop Grid Default</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="products">
-                <div class="nekto">
-                    <div>
-                        <h3>Product</h3>
-                    </div>
-                    <div class="total">
-                        <h3>Price</h3>
-                        <h3>Quantity</h3>
-                        <h3>Total</h3>
-                    </div>
-                    <div>
-                        <h3 class="then">Cart Totals</h3>
-                    </div>
-                </div>
-                <div class="diamo">
-                    <div class="add-to">
-                         <div class="eus">
-                            <div class="ad-to-cart">
-                            <div class="euro">
-                                <div class="flex-no">
-                                    <img src=${item.images} alt="">
-                                    <div class="svg-none">
-                                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 640 640">
-                                        <path
-                                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z" />
-                                    </svg>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4>${item.title}</h4>
-                                    <p>Color: Brown</p>
-                                    <p>Size: XL</p>
-                                </div>
-                            </div>
-                            <h3>${item.price}</h3>
-                            <div class="kupay">
-                                <div class="minus">
-                                    -
-                                </div>
-                                1
-                                <div class="plus">
-                                    +
-                                </div>
-                            </div>
-                            <h3>${item.price}</h3>
-                        </div>
-                        <hr>
-                        </div>
-                        <div class="clear">
-                            <div>
-                                <button>Update Curt</button>
-                            </div>
-                            <div class="clear-btn">
-                                <button>Clear Curt</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="react">
-                        <div class="sub-total">
-                            <div class="subster">
-                                <div class="subs">
-                                    <h3>Subtotals:</h3>
-                                    <p class="price">${item.price}</p>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="toto">
-                                <div class="totals">
-                                    <h3>Totals::</h3>
-                                    <p class="price">${item.price}</p>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="checs">
-                                <div class="chec">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 640 640">
-                                        <path
-                                            d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z" />
-                                    </svg>
-                                    <p>Shipping & taxes calculated at checkout</p>
-                                </div>
-                            </div>
-                            <div class="chec-btn">
-                                <button class="checkout-btn">Proceed To Checkout</button>
-                            </div>
-                        </div>
-                        <h4>Calculate Shopping</h4>
-                        <div class="sub-total">
-                            <div class="text">
-                                <input class="promo-input" type="text" placeholder="PromoCode...">
-                            <hr>
-                            <div class="btn">
-                                <button class="promo-btn">Proceed To Checkout</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-    `;
-    diamo.append(add)
-    document.querySelector(".checkout-btn").addEventListener("click", ()=>{
-        alert("Buyurtmangiz qabul qilindi tez orada siz bilan bog'lanamiz...")
-    }) 
-    let svgs = document.querySelectorAll(".svg-icon")
-    svgs.forEach(svg => {
-        svg.addEventListener("click", ()=>{
-            eus.style.display = "none"
-            eus.style.display = "none"
-            clearr.classList.toggle("activ")
-        price.forEach(item => { 
-            item.textContent = "$0.00"
-        })
-        })
-    })
-    let price = document.querySelectorAll(".price")
-    let clear = document.querySelector(".clear-btn")
-    let eus = document.querySelector(".eus")
-    let clearr = document.querySelector(".clear")
-    clear.addEventListener("click", ()=>{
-        eus.style.display = "none"
-        clearr.classList.toggle("activ")
-        price.forEach(item => { 
-            item.textContent = "$0.00"
-        })
-    })
-    let minus = document.querySelector(".minus")
-    let plus = document.querySelector(".plus")
-    let count = 1;
-    minus.addEventListener("click", ()=>{
-        if(count > 0){
-            count--;
-        }
-    })
-    plus.addEventListener("click", ()=>{
-        count++;
-    })
-    let prom = document.querySelector(".promo-input")
-    let promt = document.querySelector(".promo-btn")
-    promt.addEventListener("click", ()=>{
-        if(prom.value === "Hekto"){
-            alert("Sizga 50% chegirma")
-        }else{
-            alert("Siz kiritgan promo cod xato iltimos yana qayta urinib kuring")
-        }
-    })
-});
         })
         carts.append(cart)
     });
 }
 getdata();
 
-
-
-
-
-
-
-let cartlar = [];
 let aldata = {};
 async function newgetdata(){
-    document.querySelector(".loader").style.display = "flex"
-    document.querySelector(".loader").style.display = "none"
     const apis = await fetch("./cart.json")
     const req = await apis.json();
     aldata = req
     console.log(req);
     displaydatas(req.carts)
 }
+
 const carts = document.querySelector(".carts")
 function displaydatas(dates){
     carts.innerHTML = ""
@@ -378,28 +247,28 @@ function displaydatas(dates){
                                     </div>
                                 </div>
                             </div>
-                            <img src=${items.img} alt="">
+                            <img src=${items.images} alt="">
                         </div>
                     </div>
                     <div class="p-text">
-                        <p>${items.titles}</p>
+                        <p>${items.title}</p>
                         <p class="add">${items.delprice}</p>
                         <span class="uch">
-                            <p>${items.pric}</p>
+                            <p>${items.price}</p>
                             <del>${items.delprice}</del>
                         </span>
                     </div>
         `
         let boss = document.querySelector(".boos-cart")
-        let swipcarts = document.querySelector(".swip-carts")
+        let swipcarts = document.querySelector(".click")
+        let pag = document.querySelector(".pag") 
         cartbox.addEventListener("click", ()=>{
             boss.style.display = "flex"
             swipcarts.style.display = "none"
+            if(pag) pag.style.display = "none"
             boss.innerHTML = ""
             let creat = document.createElement("div")
             creat.setAttribute("class", "creat")
-            home.classList.toggle("activ")
-            aca .classList.toggle("activ")
             creat.innerHTML = `
             <div class="detals">
                     <div class="boss container">
@@ -414,22 +283,23 @@ function displaydatas(dates){
                     <div class="malumot container">
                         <div class="hottel">
                             <div class="img3">
-                                <img class="imgs1" src=${items.img} alt="">
-                                <img class="imgs2" src=${items.img} alt="">
-                                <img class="imgs3" src=${items.img} alt="">
+                                <img class="imgs1" src=${items.images} alt="">
+                                <img class="imgs2" src=${items.images} alt="">
+                                <img class="imgs3" src=${items.images} alt="">
                             </div>
                             <div class="sumka">
-                                <img class="img-katta" src=${items.img} alt="">
+                                <img class="img-katta" src=${items.images} alt="">
                             </div>
                             <div>
-                                <h1>${items.titles}</h1>
-                                <span>
-                                    <p>${items.pric}</p>
+                                <h1>${items.title}</h1>
+                                <p class="add cost">${items.delprice}</p>
+                                <span class="uch">
+                                    <p>${items.price}</p>
                                     <del>${items.delprice}</del>
                                 </span>
                                 <p>Color</p>
                                 <button class="cart-adds">Add To Cart</button>
-                                <h4 class="desc">Description : ${items.desc}</h4>
+                                <h4 class="desc">Description : ${items.description}</h4>
                                 <h4>Share</h4>
                                 <div class="flex">
                                     <div class="face">
@@ -456,211 +326,125 @@ function displaydatas(dates){
                     </div>
                 </div>
             `
-            home.classList.remove("activ")
-            aca.classList.remove("activ")
             boss.append(creat)
-           let img1 = creat.querySelector(".imgs1")
+            
+            let img1 = creat.querySelector(".imgs1")
             let img2 = creat.querySelector(".imgs2") 
             let img3 = creat.querySelector(".imgs3")
             let img4 = creat.querySelector(".img-katta")
             
             img1.addEventListener("click", ()=>{
-                img4.src === img1.src
-                console.log(img1);
-                
+                img4.src = img1.src
             })
             
             img2.addEventListener("click", ()=>{
-                img4.src === img2.src  
+                img4.src = img2.src  
             })
             
             img3.addEventListener("click", ()=>{
-                img4.src === img3.src
+                img4.src = img3.src
             })
-            let ads = document.querySelector(".cart-adds")
-            ads.addEventListener("click", ()=>{                
-                alert("Buyurtmangiz savatga qushildi...")
+            
+            let ads = creat.querySelector(".cart-adds")
+            ads.addEventListener("click", ()=> {
+                addtocart(items)
             })
-let shop = document.querySelector(".shop");
-let pro = document.querySelector(".rec");
-let swip = document.querySelector(".swip-carts");
-let diamo = document.querySelector(".rec");
-let creats = document.querySelector(".boos-cart");
-shop.addEventListener("click", ()=>{
-    creats.style.display = "none";
-    pro.style.display = "block";
-    pages.style.display = "none";
-    swip.style.display = "none";
-    diamo.innerHTML = "";
-    let add = document.createElement("div");
-    add.setAttribute("class", "send-qismi");
-    add.innerHTML += `
-    <div class="futs">
-                <div class="container">
-                    <div class="curt">
-                        <h1>Shopping Curt</h1>
-                        <span>
-                            <p>Home . Pages</p>
-                            <p>. Shop Grid Default</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="products">
-                <div class="nekto">
-                    <div>
-                        <h3>Product</h3>
-                    </div>
-                    <div class="total">
-                        <h3>Price</h3>
-                        <h3>Quantity</h3>
-                        <h3>Total</h3>
-                    </div>
-                    <div>
-                        <h3 class="then">Cart Totals</h3>
-                    </div>
-                </div>
-                <div class="diamo">
-                    <div class="add-to">
-                         <div class="eus">
-                            <div class="ad-to-cart">
-                            <div class="euro">
-                                <div class="flex-no">
-                                    <img src=${items.img} alt="">
-                                    <div class="svg-none">
-                                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 640 640">
-                                        <path
-                                            d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z" />
-                                    </svg>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4>${items.titles}</h4>
-                                    <p>Color: Brown</p>
-                                    <p>Size: XL</p>
-                                </div>
-                            </div>
-                            <h3>${items.pric}</h3>
-                            <div class="kupay">
-                                <div class="minus">
-                                    -
-                                </div>
-                                1
-                                <div class="plus">
-                                    +
-                                </div>
-                            </div>
-                            <h3>${items.pric}</h3>
-                        </div>
-                        <hr>
-                        </div>
-                        <div class="clear">
-                            <div>
-                                <button>Update Curt</button>
-                            </div>
-                            <div class="clear-btn">
-                                <button>Clear Curt</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="react">
-                        <div class="sub-total">
-                            <div class="subster">
-                                <div class="subs">
-                                    <h3>Subtotals:</h3>
-                                    <p class="price">${items.pric}</p>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="toto">
-                                <div class="totals">
-                                    <h3>Totals::</h3>
-                                    <p class="price">${items.pric}</p>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="checs">
-                                <div class="chec">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 640 640">
-                                        <path
-                                            d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z" />
-                                    </svg>
-                                    <p>Shipping & taxes calculated at checkout</p>
-                                </div>
-                            </div>
-                            <div class="chec-btn">
-                                <button class="checkout-btn12">Proceed To Checkout</button>
-                            </div>
-                        </div>
-                        <h4>Calculate Shopping</h4>
-                        <div class="sub-total">
-                            <div class="text">
-                                <input class="promo-input" type="text" placeholder="PromoCode...">
-                            <hr>
-                            <div class="btn">
-                                <button class="promo-btn">Proceed To Checkout</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-    `;
-    diamo.append(add)
-    document.querySelector(".checkout-btn12").addEventListener("click", ()=>{
-        alert("Buyurtmangiz qabul qilindi tez orada siz bilan bog'lanamiz...")
-    }) 
-    let svgs = document.querySelectorAll(".svg-icon")
-    svgs.forEach(svg => {
-        svg.addEventListener("click", ()=>{
-            eus.style.display = "none"
-            eus.style.display = "none"
-            clearr.classList.toggle("activ")
-        price.forEach(item => { 
-            item.textContent = "$0.00"
         })
-        })
-    })
-    let price = document.querySelectorAll(".price")
-    let clear = document.querySelector(".clear-btn")
-    let clearr = document.querySelector(".clear")
-    let eus = document.querySelector(".eus")
-    clear.addEventListener("click", ()=>{
-        clearr.classList.toggle("activ")
-        eus.style.display = "none"
-        price.forEach(item => { 
-            item.textContent = "$0.00"
-        })
-    })
-    let minus = document.querySelector(".minus")
-    let plus = document.querySelector(".plus")
-    let count = 1;
-    minus.addEventListener("click", ()=>{
-        if(count > 0){
-            count--;
-        }
-    })
-    plus.addEventListener("click", ()=>{
-        count++;
-    })
-    let prom = document.querySelector(".promo-input")
-    let promt = document.querySelector(".promo-btn")
-    promt.addEventListener("click", ()=>{
-        if(prom.value === "Hekto"){
-            alert("Sizga 50% chegirma")
-        }else{
-            alert("Siz kiritgan promo cod xato iltimos yana qayta urinib kuring")
-        }
-    })
-});
-})
+        
         carts.append(cartbox)
     })
 }
+
 newgetdata()
 
+function addtocart(item){
+    cart.push(item)
+    console.log("Cart items:", cart);
+    requad()
+}
+let notes = document.querySelector(".no-cart")
+let eus = document.querySelector(".eus")
+function requad(){
+    let toza = document.querySelector(".toza")
+    toza.addEventListener("click", ()=>{
+        eus.style.display = "none"
+        notes.style.display = "block"
+    })
+    if(cart.length > 0){
+        notes.style.display = "none"
+    }
+    eus.innerHTML = "";
+    cart.forEach((item, index) => {
+        const shopcart = document.createElement("div")
+        shopcart.innerHTML = `
+            <div class="ad-to-cart">
+                <div class="euro">
+                    <div class="flex-no">
+                        <img src="${item.images}" alt="${item.title}">
+                        <div class="svg-none" data-index="${index}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>${item.title}</h4>
+                        <p>Color: Brown</p>
+                        <p>Size: XL</p>
+                    </div>
+                </div>
+                <h3>${item.price}</h3>
+                <div class="kupay">
+                    <div class="minus" data-index="${index}">
+                        -
+                    </div>
+                    <span class="quantity">1</span>
+                    <div class="plus" data-index="${index}">
+                        +
+                    </div>
+                </div>
+                <h3 class="total-price">${item.price}</h3>
+            </div>
+            <hr>
+        `
+        const removeBtn = shopcart.querySelector(".svg-none")
+        removeBtn.addEventListener("click", function() {
+            const itemIndex = parseInt(this.getAttribute("data-index"))
+            cart.splice(itemIndex, 1)
+            requad()
+        })
+        if(cart.length === 5){
+            eus.classList.toggle("activ")
+        }
+        let sum = document.querySelector(".sum");
+
+        const minusBtn = shopcart.querySelector(".minus")
+        const plusBtn = shopcart.querySelector(".plus")
+        const quantitySpan = shopcart.querySelector(".quantity")
+        const totalPrice = shopcart.querySelector(".total-price")
+        
+        minusBtn.addEventListener("click", function() {
+            const itemIndex = parseInt(this.getAttribute("data-index"))
+            let quantity = parseInt(quantitySpan.textContent)
+            if(quantity > 1) {
+                quantity--
+                quantitySpan.textContent = quantity
+                totalPrice.textContent = `$${(parseFloat(item.price.replace('$', '')) * quantity).toFixed(2)}`
+            }
+        })
+        
+        plusBtn.addEventListener("click", function() {
+            const itemIndex = parseInt(this.getAttribute("data-index"))
+            let quantity = parseInt(quantitySpan.textContent)
+            quantity++
+            quantitySpan.textContent = quantity
+            totalPrice.textContent = `$${(parseFloat(item.price.replace('$', '')) * quantity).toFixed(2)}`
+        })
+        
+        eus.append(shopcart)
+    })
+}
 
 
 
@@ -668,6 +452,35 @@ newgetdata()
 
 
 
+
+const main = document.querySelector("main")
+main.style.display = "block"
+let shop = document.querySelector(".shop")
+let rect =  document.querySelector(".rec")
+let click = document.querySelector(".click")
+let pag = document.querySelector(".pages")
+let bosscart = document.querySelector(".boos-cart")
+let academy = document.querySelector(".academy")
+shop.addEventListener("click", ()=>{
+    bosscart.style.display = "none"
+    rect.style.display = "block"
+    click.style.display = "none"
+    pag.style.display = "none"
+})
+academy.addEventListener("click", ()=>{
+    rect.style.display = "none"
+    click.style.display = "none"
+    bosscart.style.display = "none"
+    pag.style.display = "block"
+})
+let homes = document.querySelector(".home")
+homes.addEventListener("click", ()=>{
+    rect.style.display = "none"
+    click.style.display = "block"
+    console.log(click);
+    bosscart.style.display = "none"
+    pag.style.display = "none"
+})
 function handleSelect(event){
     let tanlangan = event.target.value;
     if (tanlangan === "all") {
@@ -693,6 +506,7 @@ search.addEventListener("keyup", (e) => {
         if (res.length < 1) {
             carts.innerHTML = ""
             const notFound = document.createElement("h5")
+            notFound.setAttribute("class", "qidirno")
             notFound.textContent = "Siz qidirgan product bizda mavjud emas"
             carts.append(notFound)
         } else {
@@ -703,9 +517,6 @@ search.addEventListener("keyup", (e) => {
         displaydata(AllData)
     }
 })
-
-
-
 const searchDat = document.getElementById("inp-search")
 searchDat.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
@@ -715,7 +526,7 @@ searchDat.addEventListener("keyup", (e) => {
         if (res.length < 1) {
             carts.innerHTML = ""
             const notFound = document.createElement("h5")
-            notFound.setAttribute("class", "folse")
+            notFound.setAttribute("class", "qidirno")
             notFound.textContent = "Siz qidirgan product bizda mavjud emas"
             carts.append(notFound)
         } else {
@@ -731,7 +542,7 @@ const searchData = document.getElementById("inp-search")
 let my = document.querySelector(".cart")
 searchData.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
-        let res = aldata.carts.filter((item) => item.titles.toLowerCase().includes(e.target.value.toLowerCase()))
+        let res = aldata.carts.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
         my.style.display = "none"
         if (res.length < 1) {
             carts.innerHTML = ""
@@ -811,27 +622,3 @@ let timeIntervals = setInterval(() => {
     })
     }
 }, 1000);
-let home = document.querySelector(".home");
-let swipcarts = document.querySelector(".swip-carts");
-let pages = document.querySelector(".pages");
-let aca = document.querySelector(".academy");
-let bos = document.querySelector(".boos-cart");
-let rec = document.querySelector(".rec");
-
-home.addEventListener("click", ()=>{
-    swipcarts.style.display = "block";
-    pages.style.display = "none";
-    aca.classList.remove("activ");
-    home.classList.add("activ");
-    bos.style.display = "none";
-    rec.style.display = "none";
-});
-
-aca.addEventListener("click", ()=>{
-    swipcarts.style.display = "none";
-    bos.style.display = "none";
-    pages.style.display = "block";
-    aca.classList.add("activ");
-    home.classList.remove("activ");
-    rec.style.display = "none";
-});

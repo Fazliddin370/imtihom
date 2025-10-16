@@ -160,7 +160,6 @@ main{
         }
     }
 }
-
 section{
     .wrap{
         display: flex;
@@ -365,6 +364,9 @@ section{
     }
    
 
+    .add{
+display: none;
+}
 .carts{
         display: grid;
         margin-bottom: 60px;
@@ -372,9 +374,6 @@ section{
         .cart-box{
             margin-bottom: 70px;
             width: 360px;
-            .add{
-        display: none;
-    }
             .img-box{
                 width: 360px;
                 height: 280px;
@@ -472,9 +471,6 @@ section{
                         color: rgba(251, 36, 72, 1);
                     }
                 }
-                .uch.activ{
-                    display: none;
-                }
             }
         }
     }
@@ -485,6 +481,12 @@ section{
         align-items: center;
         padding: 10px 0px;
         justify-content: center;
+    }
+    .cost{
+        padding: 20px 0px;
+    }
+    .uch.activ{
+        display: none;
     }
     .pages{
         display: none;
@@ -949,9 +951,6 @@ footer{
             }
         }
     }
-.rec {
-    display: none;
-}
 .send-qismi {
     width: 100%;
     min-height: 800px;
@@ -1213,6 +1212,13 @@ footer{
     .diamo{
         display: flex;
         gap: 80px;
+        .no-cart{
+            h1{
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+                color: rgb(130, 130, 130);
+            }
+        }
     }
 }
     footer{
@@ -1274,6 +1280,7 @@ section{
            .imgs3{
             transform: rotate(300deg);
            }
+           
            span{
             display: flex;
             gap: 30px;
@@ -1383,7 +1390,6 @@ section{
             .img3{
                 width: 151px;
                 img{
-                    width: 151px;
                     margin-bottom: 5px;
                     height: 155px;
                     cursor: pointer;
@@ -1392,7 +1398,6 @@ section{
             }
             .sumka{
                 img{
-                    width: 375px;
                     height: 487px;
                     border-radius: 3px;
                 }
@@ -1404,4 +1409,10 @@ section{
     width: 740px;
     height: 570px;
     overflow-y: scroll;
+}
+.rec{
+    display: none;
+}
+.qidirno{
+    color: aqua;
 }

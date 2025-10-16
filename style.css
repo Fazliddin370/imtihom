@@ -368,6 +368,9 @@ section .product ul li:hover {
 section .product ul li:nth-child(1) {
   color: rgb(251, 73, 151);
 }
+section .add {
+  display: none;
+}
 section .carts {
   display: grid;
   margin-bottom: 60px;
@@ -376,9 +379,6 @@ section .carts {
 section .carts .cart-box {
   margin-bottom: 70px;
   width: 360px;
-}
-section .carts .cart-box .add {
-  display: none;
 }
 section .carts .cart-box .img-box {
   width: 360px;
@@ -474,9 +474,6 @@ section .carts .cart-box .p-text .uch {
 section .carts .cart-box .p-text .uch del {
   color: rgb(251, 36, 72);
 }
-section .carts .cart-box .p-text .uch.activ {
-  display: none;
-}
 section .yoq {
   display: none;
   text-align: center;
@@ -484,6 +481,12 @@ section .yoq {
   align-items: center;
   padding: 10px 0px;
   justify-content: center;
+}
+section .cost {
+  padding: 20px 0px;
+}
+section .uch.activ {
+  display: none;
 }
 section .pages {
   display: none;
@@ -942,9 +945,6 @@ footer .footer-qism .inp-taype input::placeholder {
 .send-qismi .products .nekto .then {
   transform: translateX(-180px);
 }
-.send-qismi .rec {
-  display: none;
-}
 .send-qismi .send-qismi {
   width: 100%;
   min-height: 800px;
@@ -1207,6 +1207,11 @@ footer .footer-qism .inp-taype input::placeholder {
   display: flex;
   gap: 80px;
 }
+.send-qismi .diamo .no-cart h1 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: rgb(130, 130, 130);
+}
 
 footer {
   padding: 0px 20px;
@@ -1380,14 +1385,12 @@ section {
   width: 151px;
 }
 .boos-cart .malu .malumot .img3 img {
-  width: 151px;
   margin-bottom: 5px;
   height: 155px;
   cursor: pointer;
   border-radius: 3px;
 }
 .boos-cart .malu .malumot .sumka img {
-  width: 375px;
   height: 487px;
   border-radius: 3px;
 }
@@ -1396,4 +1399,12 @@ section {
   width: 740px;
   height: 570px;
   overflow-y: scroll;
+}
+
+.rec {
+  display: none;
+}
+
+.qidirno {
+  color: aqua;
 }/*# sourceMappingURL=style.css.map */
