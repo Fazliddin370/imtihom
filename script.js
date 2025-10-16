@@ -14,10 +14,11 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+
 let cart = []; 
 let AllData = [];
-
-
 async function getdata(){
     document.querySelector(".loader").style.display = "flex"
     const api = await fetch("./pg.json")
@@ -369,7 +370,7 @@ function requad(){
             eus.classList.toggle("activ")
         }
         let sum = document.querySelector(".sum");
-        sum.textContent = `${cart.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')), 0).toFixed(2)}$`;
+        sum.textContent = `${totalPrice.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')), 0).toFixed(2)}$`;
 
         const minusBtn = shopcart.querySelector(".minus")
         const plusBtn = shopcart.querySelector(".plus")
