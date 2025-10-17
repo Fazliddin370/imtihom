@@ -5,17 +5,19 @@
       "description": "Yengil va qulay sumka, har qanday vaziyatda foydalanish uchun juda yaxshi.",
       "stars": 4.5,
       "category": "Sumka",
-      "price": 150.000,
+      "price": "150.000",
+      "delprice": "605.00",
       "images": [
         "https://images.uzum.uz/cr42o4esbq7g1s9aevi0/original.jpg"
-          ]
+      ]
     },
     {
       "title": "Sumka Yo'lboshchi",
       "description": "Yuqori sifatli materiallardan tayyorlangan yo'lboshchi sumka.",
       "stars": 4.9,
       "category": "Sumka",
-      "price": 350.000,
+      "price": "350.000",
+      "delprice": "600.00",
       "images": [
         "https://images.uzum.uz/coqcrcbmdtjlpksc1ks0/original.jpg"
       ]
@@ -25,7 +27,8 @@
       "description": "Oddiy va qulay sumka, minimalizmni yaxshi ko'radiganlar uchun.",
       "stars": 4.6,
       "category": "Sumka",
-      "price": 130.000,
+      "price": "130.000",
+      "delprice": "205.00",
       "images": [
         "https://images.uzum.uz/cijv9st40v9pplt5ekgg/original.jpg"
       ]
@@ -35,7 +38,8 @@
       "description": "Samsung Galaxy S22 smartfoni, 120Hz ekrani va 50MP kamerasi bilan.",
       "stars": 4.8,
       "category": "Telefon",
-      "price": 400.0000,
+      "price": "400.000",
+      "delprice": "800.00",
       "images": [
         "https://m.media-amazon.com/images/I/61WIscqToHL.jpg",
         "https://m.media-amazon.com/images/I/61thQ4Em3eL._AC_SL1000_.jpg"
@@ -46,7 +50,8 @@
       "description": "Apple iPhone 13 Pro, tezkor ishlash va mukammal dizayn.",
       "stars": 5,
       "category": "Telefon",
-      "price": 450.0000,
+      "price": "450.000",
+      "delprice": "500.00",
       "images": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu3NzrsA7ljU41Tfg3keDgdEkUkQC-kargWA&s",
         "https://w0.peakpx.com/wallpaper/202/657/HD-wallpaper-apple-iphone-13-pro-max-2021-macro.jpg"
@@ -57,7 +62,8 @@
       "description": "Xiaomi Mi 11, yuqori samarali kamera va kuchli protsessor.",
       "stars": 4.6,
       "category": "Telefon",
-      "price": 300.0000,
+      "price": "300.000",
+      "delprice": "400.00",
       "images": [
         "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344667.93946102.png"
       ]
@@ -67,7 +73,8 @@
       "description": "OnePlus 9 Pro, ajoyib dizayn va tezkor quvvatlash.",
       "stars": 4.7,
       "category": "Telefon",
-      "price": 350.0000,
+      "price": "350.000",
+      "delprice": "390.00",
       "images": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQglPalTzjD4Oai7MQKvvo0PCr1DVMdduEJGw&s",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI6gN4EZ6gWxIy7-LDSkYWvzDtYS6xHB_Gsw&s"
@@ -78,11 +85,54 @@
       "description": "Huawei P40 Pro, 5G qo'llab-quvvatlaydi va juda yaxshi kamera sifatiga ega.",
       "stars": 4.4,
       "category": "Telefon",
-      "price": 330.0000,
+      "price": "330.000",
+      "delprice": "430.00",
       "images": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHIgGy_CAfZ1c3MwOjbEeNAOgNvXPgq7bpWw&s",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYVEum90ZNP7sxW39YQ8a1Iw1BV_Rv8FD6nw&s"
       ]
+    },
+    {
+      "title": "Comfort Handy Craft",
+      "images": "./imgs/kreslo.png",
+      "price": "42.00",
+      "delprice": "65.00",
+      "description": "Comfort Handy Craft is a brand that focuses on creating comfortable, ergonomic, and high-quality products for craft and design lovers. Their items are designed to make handwork easier and more enjoyable, combining practical design with comfort and creativity. Products often include crafting tools, accessories, and materials that help users work efficiently and comfortably."
+    },
+    {
+      "title": "Comfort Creslo",
+      "images": "./imgs/sariqkr.png",
+      "price": "50.00",
+      "delprice": "80.00",
+      "description": "Comfort Chair — also known as Comfort Creslo — refers to a chair designed for maximum relaxation and ergonomic support. These chairs are often made with soft materials, adjustable backrests, and modern designs that provide both comfort and style. They are commonly used in homes, offices, and lounges for long sitting periods while maintaining good posture and reducing fatigue."
+    },
+    {
+      "title": "Comfort Creslo Soft",
+      "images": "./imgs/uzunkr.png",
+      "price": "54.00",
+      "delprice": "88.00",
+      "description": "Comfort Creslo Soft is a premium comfort chair designed with a soft, ergonomic structure that provides excellent support and relaxation. Its smooth upholstery, gentle cushioning, and modern design make it ideal for homes, offices, and lounge areas. The chair combines style, comfort, and durability — perfect for long sitting sessions without losing posture or ease."
+    },
+    {
+      "title": "Comfort Handy Soft",
+      "images": "./imgs/oqkr.png",
+      "price": "32.00",
+      "delprice": "60.00",
+      "description": "Comfort Handy Soft is a stylish and ergonomic chair designed for everyday comfort. Made with soft, high-quality materials, it offers excellent back support and a cozy sitting experience. Its lightweight, modern design makes it easy to move and perfect for offices, homes, or creative spaces. The Comfort Handy Soft combines functionality, comfort, and elegance in one smart design."
+    },
+    {
+      "title": "Comfort Soft Craft",
+      "images": "./imgs/qilzilkr.png",
+      "price": "45.00",
+      "delprice": "55.00",
+      "description": "Comfort Soft Craft is a modern, ergonomic chair designed for creators and professionals who value comfort and style. Its soft cushioning and supportive shape make long hours of crafting, designing, or working feel effortless. With a sleek look and durable materials, Comfort Soft Craft combines comfort, practicality, and elegant craftsmanship — perfect for studios, offices, and home workspaces."
+    },
+    {
+      "title": "Comfort Soft Arim Chair",
+      "images": "././imgs/kr.png",
+      "price": "34.00",
+      "delprice": "54.00",
+      "description": "Comfort Soft Arim Chair is a premium ergonomic chair crafted for exceptional comfort and modern elegance. It features a soft, breathable cushion, smooth curves, and a supportive backrest that perfectly fits your body’s natural shape. Designed for both home and office use, the Comfort Soft Arim Chair offers long-lasting comfort, stylish design, and high-quality materials — making it the perfect balance of relaxation and productivity."
     },
     {
       "title": "Shkaf Klassik",
@@ -90,6 +140,7 @@
       "stars": 4.3,
       "category": "Shkaf",
       "price": 800.000,
+      "delprice": "950.00",
       "images": [
         "https://frankfurt.apollo.olxcdn.com/v1/files/t4glmqfztnnn1-UZ/image",
         "https://frankfurt.apollo.olxcdn.com/v1/files/a3a6lwu8j9nu1-UZ/image"
@@ -100,7 +151,8 @@
       "description": "Kichik va yengil shkaf, kiyimlarni yig'ish uchun ideal variant.",
       "stars": 4.0,
       "category": "Shkaf",
-      "price": 600.000,
+      "price": "600.000",
+      "delprice": "650.00",
       "images": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTymAVMQWrpGcAYKc6MHojy3QLQPQcAgSMMZw&s",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFiVJe6GvFTHM4e4o6c7sVsvGAR45hG2w5mA&s"
@@ -111,7 +163,8 @@
       "description": "Tabiiy yog'ochdan yasalgan mustahkam shkaf.",
       "stars": 4.7,
       "category": "Shkaf",
-      "price": 900.000,
+      "price": "900.000",
+      "delprice": "1000.00",
       "images": [
         "https://aarsunwoods.com/wp-content/uploads/2022/02/Classic-Wardrobe-in-Solid-Wood-jpg.webp"
       ]
@@ -121,7 +174,8 @@
       "description": "Kichik va qulay shkaf, hujjatlar va kitoblar uchun ideal.",
       "stars": 4.5,
       "category": "Shkaf",
-      "price": 500.000,
+      "price": "500.000",
+      "delprice": "650.00",
       "images": [
         "https://frankfurt.apollo.olxcdn.com/v1/files/eftpdoftrtnk1-UZ/image;s=800x800",
         "https://frankfurt.apollo.olxcdn.com/v1/files/nsx1c636nejy1-UZ/image;s=750x754"

@@ -411,6 +411,7 @@ section .carts .cart-box .img-box:hover .shopping svg {
   width: 19px;
 }
 section .carts .cart-box .img-box:hover .sale {
+  z-index: 2;
   background: rgb(63, 80, 158);
   color: white;
 }
@@ -450,6 +451,7 @@ section .carts .cart-box .mon {
 section .carts .cart-box .sale {
   width: 100px;
   height: 40px;
+  z-index: 2;
   border-radius: 100px 0px 100px 0px;
   text-align: center;
   display: flex;

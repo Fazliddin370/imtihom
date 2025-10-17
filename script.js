@@ -26,6 +26,7 @@ async function getdata(){
     console.log(res);
     AllData = res.products;
     displaydata(res.products)
+    displaydatas(res.products)
     document.querySelector(".loader").style.display = "none"
 }
 function displaydata(data){
@@ -65,10 +66,10 @@ function displaydata(data){
                         <div class="pink"></div>
                         <div class="darkblue"></div>
                     </div>
-                    <p class="yoq">$${item.price}</p>
+                    <p class="yoq">${formatPrice(item.price)}</p>
                     <span class="uchir">
-                        <p>$${item.stars}</p>
-                        <del>$${item.price}</del>
+                        <p>${formatPrice(item.stars)}</p>
+                        <del>${formatPrice(item.price)}</del>
                     </span>
         `
         let boss = document.querySelector(".boos-cart")
@@ -103,10 +104,10 @@ function displaydata(data){
                             </div>
                             <div>
                                 <h1>${item.title}</h1>
-                                 <p class="add cost">${item.price}</p>
+                                 <p class="add cost">${formatPrice(item.price)}</p>
                                 <span class="uch">
-                                    <p>${item.stars}</p>
-                                    <del>${item.price}</del>
+                                    <p>${formatPrice(item.stars)}</p>
+                                    <del>${formatPrice(item.price)}</del>
                                 </span>
                                 <p>Color</p>
                                 <button class="promo-btn">Add To Cart</button>
@@ -148,19 +149,10 @@ function displaydata(data){
 }
 getdata();
 
-let aldata = {};
-async function newgetdata(){
-    const apis = await fetch("./cart.json")
-    const req = await apis.json();
-    aldata = req
-    console.log(req);
-    displaydatas(req.carts)
-}
-
 const carts = document.querySelector(".carts")
-function displaydatas(dates){
+function displaydatas(data){
     carts.innerHTML = ""
-    dates.forEach((items)=>{
+    data.forEach((item)=>{
         const cartbox = document.createElement("div")
         cartbox.setAttribute("class", "cart-box")
         cartbox.innerHTML = `
@@ -199,15 +191,15 @@ function displaydatas(dates){
                                     </div>
                                 </div>
                             </div>
-                            <img src=${items.images} alt="">
+                            <img src=${item.images} alt="">
                         </div>
                     </div>
                     <div class="p-text">
-                        <p>${items.title}</p>
-                        <p class="add">${items.delprice}</p>
+                        <p>${item.title}</p>
+                        <p class="add">${formatPrice(item.delprice)}</p>
                         <span class="uch">
-                            <p>${items.price}</p>
-                            <del>${items.delprice}</del>
+                            <p>${formatPrice(item.price)}</p>
+                            <del>${formatPrice(item.delprice)}</del>
                         </span>
                     </div>
         `
@@ -235,23 +227,23 @@ function displaydatas(dates){
                     <div class="malumot container">
                         <div class="hottel">
                             <div class="img3">
-                                <img class="imgs1" src=${items.images} alt="">
-                                <img class="imgs2" src=${items.images} alt="">
-                                <img class="imgs3" src=${items.images} alt="">
+                                <img class="imgs1" src=${item.images} alt="">
+                                <img class="imgs2" src=${item.images} alt="">
+                                <img class="imgs3" src=${item.images} alt="">
                             </div>
                             <div class="sumka">
-                                <img class="img-katta" src=${items.images} alt="">
+                                <img class="img-katta" src=${item.images} alt="">
                             </div>
                             <div>
-                                <h1>${items.title}</h1>
-                                <p class="add cost">${items.delprice}</p>
+                                <h1>${item.title}</h1>
+                                <p class="add cost">${formatPrice(item.delprice)}</p>
                                 <span class="uch">
-                                    <p>${items.price}</p>
-                                    <del>${items.delprice}</del>
+                                    <p>${formatPrice(item.price)}</p>
+                                    <del>${formatPrice(item.delprice)}</del>
                                 </span>
                                 <p>Color</p>
                                 <button class="cart-adds">Add To Cart</button>
-                                <h4 class="desc">Description : ${items.description}</h4>
+                                <h4 class="desc">Description : ${item.description}</h4>
                                 <h4>Share</h4>
                                 <div class="flex">
                                     <div class="face">
@@ -300,7 +292,7 @@ function displaydatas(dates){
             let ads = creat.querySelector(".cart-adds")
             let modalt = document.querySelector(".modalt")  
             ads.addEventListener("click", ()=> {
-                addtocart(items)
+                addtocart(item)
                 modalt.classList.toggle("activ")
                 setTimeout(()=> {
                     modalt.classList.remove("activ")
@@ -312,7 +304,7 @@ function displaydatas(dates){
     })
 }
 
-newgetdata()
+getdata()
 
 function addtocart(item){
     cart.push(item)
@@ -350,7 +342,7 @@ function requad(){
                         <p>Size: XL</p>
                     </div>
                 </div>
-                <h3>${item.price}</h3>
+                <h3>${formatPrice(item.delprice)}</h3>
                 <div class="kupay">
                     <div class="minus" data-index="${index}">
                         -
@@ -360,7 +352,7 @@ function requad(){
                         +
                     </div>
                 </div>
-                <h3 class="total-price">${item.price}</h3>
+                <h3 class="total-price">${formatPrice(item.delprice)}</h3>
             </div>
             <hr>
         `
@@ -373,7 +365,10 @@ function requad(){
         if(cart.length === 5){
             eus.classList.toggle("activ")
         }
-
+        let sum = document.querySelector(".sum")
+        sum.textContent = `${formatPrice(cart.reduce((acc, curr) => acc + parseFloat(curr.delprice.replace('$', '')), 0))}.00`
+        let sum2 = document.querySelector(".sum2")
+        sum2.textContent = `${formatPrice(cart.reduce((acc, curr) => acc + parseFloat(curr.delprice.replace('$', '')), 0))}.00`
         const minusBtn = shopcart.querySelector(".minus")
         const plusBtn = shopcart.querySelector(".plus")
         const quantitySpan = shopcart.querySelector(".quantity")
@@ -403,13 +398,25 @@ let modal = document.querySelector(".modalp")
 let promo = document.querySelector(".promo")
 let modalx = document.querySelector(".modalx")
 let chec = document.querySelector(".checout")
+let discountApplied = false;
+
 chec.addEventListener("click", ()=>{
-    if(promo.value === "Hekto" || promo.value === "hekto" || promo.value === "HEKTO"){
+    if((promo.value === "Hekto" || promo.value === "hekto" || promo.value === "HEKTO") && !discountApplied){
+        discountApplied = true;
+        let total = cart.reduce((acc, curr) => acc + parseFloat(curr.delprice.replace('$', '')), 0);
+        let discountedTotal = total * 0.5;
+        let sum2 = document.querySelector(".sum2");
+        sum2.textContent = `${formatPrice(discountedTotal.toFixed(2))}`;
         modal.classList.toggle("activ")
         setTimeout(()=> {
             modal.classList.remove("activ")
         }, 5000);
-    }else{
+    } else if(discountApplied) {
+        modalx.classList.toggle("activ")
+        setTimeout(()=> {
+            modalx.classList.remove("activ")
+        }, 5000);
+    } else {
         modalx.classList.toggle("activ")
         setTimeout(()=> {
             modalx.classList.remove("activ")
@@ -480,53 +487,75 @@ search.addEventListener("keyup", (e) => {
         displaydata(AllData)
     }
 })
+let cartlar = document.querySelector(".cart")
 const searchDat = document.getElementById("inp-search")
-searchDat.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-        let res = AllData.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
-        console.log(res);
-        if (res.length < 1) {
-            carts.innerHTML = ""
-            const notFound = document.createElement("h5")
-            notFound.setAttribute("class", "qidirno")
-            notFound.textContent = "Siz qidirgan product bizda mavjud emas"
-            carts.append(notFound)
-        } else {
-            displaydata(res)
-        }
-    }
-    if (e.target.value == "") {
+searchDat.addEventListener("input", (e) => {
+    let searchValue = e.target.value.toLowerCase().trim();
+    
+    if (searchValue === "") {
         displaydata(AllData)
+        displaydatas(AllData)
+        return;
+    }
+    
+    let res = AllData.filter((item) => 
+        item.title.toLowerCase().includes(searchValue)
+)
+cartlar.style.display = "none"    
+    if (res.length < 1) {
+        const carts = document.querySelector(".cartlar")
+        carts.innerHTML = ""
+        const notFound = document.createElement("h5")
+        notFound.setAttribute("class", "qidirno")
+        notFound.textContent = "Siz qidirgan product bizda mavjud emas"
+        carts.append(notFound)
+    } else {
+        displaydata(res)
+        displaydatas(res)
+        cartlar.style.display = "block"
     }
 })
+let currentCurrency = "USD";
+let exchangeRate = 12500; 
 
+function setCurrency(event) {
+    currentCurrency = event.target.value;
+    displaydata(AllData);
+    displaydatas(AllData);
+}
+
+function formatPrice(price) {
+    if (currentCurrency === "USD") {
+        return `$${price}`;
+    } else {
+        const priceNumber = parseFloat(price.toString().replace('$', ''));
+        const uzsPrice = (priceNumber * exchangeRate).toLocaleString();
+        return `${uzsPrice} UZS`;
+    }
+}
 const searchData = document.getElementById("inp-search")
 let my = document.querySelector(".cart")
 let model = document.querySelector(".open-modal")
-searchData.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-        let res = aldata.carts.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
-        my.style.display = "none"
-        model.classList.toggle("activ")
-        if (res.length < 1) {
-            carts.innerHTML = ""
-            const notFound = document.createElement("h5")
-            notFound.style = `
-               color: rgba(251, 46, 134, 1);
-               font-size: 25px;
-               text-align: center;
-               width: 100%;
-            `
-            notFound.textContent = "Siz qidirgan product bizda mavjud emas"
-            carts.append(notFound)
-        } else {
-            displaydatas(res)
-        }
+
+const searchs = document.getElementById("search-data")
+searchs.addEventListener("input", (e) => {
+    let searchValue = e.target.value.toLowerCase().trim();
+    if (searchValue === "") {
+        displaydata(AllData)
+        return;
     }
-    if (e.target.value == "") {
-        my.style.display = "block"
-        model.classList.remove("activ")
-        displaydatas(aldata.carts)
+    let res = AllData.filter((item) => 
+        item.price.toString().toLowerCase().includes(searchValue)
+    )
+    if (res.length < 1) {
+        const carts = document.querySelector(".cartlar")
+        carts.innerHTML = ""
+        const notFound = document.createElement("h5")
+        notFound.setAttribute("class", "qidirno")
+        notFound.textContent = "Siz qidirgan product bizda mavjud emas"
+        carts.append(notFound)
+    } else {
+        displaydata(res)
     }
 })
 const date = new Date();
