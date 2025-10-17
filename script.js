@@ -311,7 +311,6 @@ newgetdata()
 
 function addtocart(item){
     cart.push(item)
-    console.log("Cart items:", cart);
     requad()
 }
 let notes = document.querySelector(".no-cart")
@@ -369,8 +368,6 @@ function requad(){
         if(cart.length === 5){
             eus.classList.toggle("activ")
         }
-        let sum = document.querySelector(".sum");
-        sum.textContent = `${totalPrice.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')), 0).toFixed(2)}$`;
 
         const minusBtn = shopcart.querySelector(".minus")
         const plusBtn = shopcart.querySelector(".plus")
