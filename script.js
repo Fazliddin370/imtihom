@@ -2,7 +2,7 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
    autoplay: {
-        delay: 3000, 
+        delay: 2000, 
       },
   loop: true,
   pagination: {
@@ -298,8 +298,13 @@ function displaydatas(dates){
             })
             
             let ads = creat.querySelector(".cart-adds")
+            let modalt = document.querySelector(".modalt")  
             ads.addEventListener("click", ()=> {
                 addtocart(items)
+                modalt.classList.toggle("activ")
+                setTimeout(()=> {
+                    modalt.classList.remove("activ")
+                }, 3000);
             })
         })
         
@@ -480,7 +485,6 @@ searchDat.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         let res = AllData.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
         console.log(res);
-        
         if (res.length < 1) {
             carts.innerHTML = ""
             const notFound = document.createElement("h5")
@@ -498,13 +502,21 @@ searchDat.addEventListener("keyup", (e) => {
 
 const searchData = document.getElementById("inp-search")
 let my = document.querySelector(".cart")
+let model = document.querySelector(".open-modal")
 searchData.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         let res = aldata.carts.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
         my.style.display = "none"
+        model.classList.toggle("activ")
         if (res.length < 1) {
             carts.innerHTML = ""
             const notFound = document.createElement("h5")
+            notFound.style = `
+               color: rgba(251, 46, 134, 1);
+               font-size: 25px;
+               text-align: center;
+               width: 100%;
+            `
             notFound.textContent = "Siz qidirgan product bizda mavjud emas"
             carts.append(notFound)
         } else {
@@ -513,6 +525,7 @@ searchData.addEventListener("keyup", (e) => {
     }
     if (e.target.value == "") {
         my.style.display = "block"
+        model.classList.remove("activ")
         displaydatas(aldata.carts)
     }
 })

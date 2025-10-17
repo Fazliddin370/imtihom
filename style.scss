@@ -335,6 +335,10 @@ section{
         transform: translateY(300px);
         padding: 300px 0px;
     }
+    .open-modal.activ{
+        transform: translateY(0px);
+        padding: 0px 0px;
+    }
     .product{
         h1{
             padding: 30px 0px;
@@ -1419,9 +1423,32 @@ section{
 .qidirno{
     color: aqua;
 }
-
-
-
+.modalt{
+    transform: translateY(-100px);
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    .oyna{
+        z-index: 2;
+        width: 330px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        transform: translateX(960px);
+        gap: 10px;
+        border-radius: 10px;
+        background-color: rgb(16, 215, 16);
+        h3{
+            color: white;
+        }
+        svg{
+            fill: white;
+            width: 20px;
+        }
+    }
+}
 .modalp{
     transform: translateY(-100px);
     position: fixed;
@@ -1447,6 +1474,10 @@ section{
             width: 20px;
         }
     }
+}
+.modalt.activ{
+    transition: all 0.5s;
+    transform: translateY(45px);
 }
 .modalp.activ{
     transition: all 0.5s;
@@ -1483,48 +1514,3 @@ section{
         }
     }
 }
-
-
-
-// @media(max-width: 1915px){
-//     section{
-//         .carts{
-//             .cart-box{
-//                 .img-box{
-//                     width: 400px;
-//                 }
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 1138px){
-//     section{
-//         .carts{
-//            .cart-box{
-//             width: 340px;
-//              .img-box{
-//                 width: 340px;
-//             }
-//            }
-//         // display: grid;
-//         // grid-template-columns: repeat(2, 1fr);
-//     }
-//     .swiper{
-//         height: 300px;
-//     .cart{
-//         height: 300px;
-//     }}
-//     .swip-pg{
-//         height: 300px;
-//         .lamp{
-//         .divan{
-//         width: 340px;
-//     }
-//     }
-//     }
-//     .cartlar{
-//         display: grid;
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-//     }
-// }

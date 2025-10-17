@@ -341,6 +341,10 @@ section .open-modal {
   transform: translateY(300px);
   padding: 300px 0px;
 }
+section .open-modal.activ {
+  transform: translateY(0px);
+  padding: 0px 0px;
+}
 section .product {
   text-align: center;
 }
@@ -1412,6 +1416,33 @@ section {
   color: aqua;
 }
 
+.modalt {
+  transform: translateY(-100px);
+  position: fixed;
+  transition: all 0.5s;
+  top: 0;
+}
+.modalt .oyna {
+  z-index: 2;
+  width: 330px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  transform: translateX(960px);
+  gap: 10px;
+  border-radius: 10px;
+  background-color: rgb(16, 215, 16);
+}
+.modalt .oyna h3 {
+  color: white;
+}
+.modalt .oyna svg {
+  fill: white;
+  width: 20px;
+}
+
 .modalp {
   transform: translateY(-100px);
   position: fixed;
@@ -1437,6 +1468,11 @@ section {
 .modalp .oyna svg {
   fill: white;
   width: 20px;
+}
+
+.modalt.activ {
+  transition: all 0.5s;
+  transform: translateY(45px);
 }
 
 .modalp.activ {
